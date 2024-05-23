@@ -1,8 +1,11 @@
-
+import { RouterProvider } from "react-router-dom"
+import { MainRouter } from "./Routes/MainRouter"
 
 const App = () => {
   return (
-    <div className="w-[100%] h-[20vh] bg-black">App</div>
+  <>
+  <RouterProvider router={MainRouter}/>
+  </>
   )
 }
 
