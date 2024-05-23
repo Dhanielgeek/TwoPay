@@ -1,6 +1,7 @@
 import Logo from '../assets/bank-icon-9.png'
 import Wel from '../assets/app-monetization-concept-illustration_114360-7584-removebg-preview.png'
 import { useNavigate } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
 const Welcome = () => {
 
@@ -8,11 +9,30 @@ const Welcome = () => {
   const Navigate = useNavigate()
 
 
+  const motionVariant = {
+    open: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.9,
+      },
+    },
+    close: {
+      opacity: 0,
+      y: "100px",
+    },
+  };
+
 
 
   return (
-    <div className="w-[100%] h-[100vh] bg-[#ebebeb] flex flex-col justify-around items-center">
-      <div className='w-[30%] h-[90%] bg-[#2E54E3] flex-col flex justify-around items-center rounded-md phone:w-[90%] tab:w-[70%]'>
+    <div
+     className="w-[100%] h-[100vh] bg-[#ebebeb] flex flex-col justify-around items-center">
+      <motion.div 
+      variants={motionVariant} 
+      initial="close" 
+      animate="open"   
+       className='w-[30%] h-[90%] bg-[#2E54E3] flex-col flex justify-around items-center rounded-md phone:w-[90%] tab:w-[70%]'>
       <div className="w-[100%] h-[15%] px-7">
         <div className="w-[17%] h-[100%] flex justify-center items-center flex-col ">
           <img src={Logo} alt="" className='w-[100%] h-[70%] object-contain' />
@@ -30,7 +50,7 @@ const Welcome = () => {
         <button className='w-[90%] h-[39%] bg-[#4D91FF] rounded-md  text-base font-semibold text-white' onClick={()=>Navigate('/login')}>Login</button>
         <button className='w-[90%] h-[39%] bg-[#4D91FF] rounded-md  text-base font-semibold text-white' onClick={()=>Navigate('/signup')}>Sign Up</button>
       </div>
-      </div>
+      </motion.div>
     </div>
   )
 }
