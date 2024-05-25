@@ -33,7 +33,7 @@ const Navigate = useNavigate()
         <form action="" className='w-[100%] h-[100%]  flex flex-col justify-around items-center'>
         <div className='w-[90%] h-[24%] px-2 flex justify-around items-start flex-col smallPhone:h-[28%]'>
           <label htmlFor="" className='text-[17px] font-medium text-white'>Email</label>
-          <input type="text" className='w-[100%] h-[50%] rounded-lg px-2 outline-none  bg-[#FDFDF7] ' placeholder='Enter your email' />
+          <input type="email" className='w-[100%] h-[50%] rounded-lg px-2 outline-none  bg-[#FDFDF7] ' placeholder='Enter your email' />
         </div>
         <div className='w-[90%] h-[24%] px-2 flex justify-around items-start flex-col smallPhone:h-[28%]'>
           <label htmlFor="" className='text-[17px] font-medium text-white'>Password</label>

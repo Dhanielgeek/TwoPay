@@ -2,7 +2,7 @@
 
 const Dashboard = () => {
   return (
-    <div>Dashboard</div>
+    <div className="w-[100%] h-[100vh] ">Dashboard</div>
   )
 }
 
