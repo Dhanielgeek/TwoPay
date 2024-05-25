@@ -2,12 +2,14 @@ import Logo from '../assets/bank-icon-9.png'
 import { useState } from 'react'
 import { FaRegEye } from "react-icons/fa6";
 import { FaRegEyeSlash } from "react-icons/fa6";
+import { useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
 
   const [Show, setShow] = useState<boolean>(false)
   const [confirmShow, setconfirmShow] = useState<boolean>(false)
 
+const Navigate = useNavigate()
 
   const HandleShow = ()=>{
     setShow(!Show)
@@ -32,23 +34,23 @@ const SignUp = () => {
       </div>
       <form action="" className='w-[90%] h-[75%] flex justify-around items-center flex-col'>
         <div className='w-[100%] h-[15%]  flex justify-around items-start flex-col'>
-          <label htmlFor="" className='text-[15px] text-white'>First Name</label>
+          <label htmlFor="" className='text-[15px] text-white smallPhone:text-[12px]'>First Name</label>
           <input type="text" className='w-[100%] h-[54%] bg-[#fdfdf7] outline-none rounded-md px-3' placeholder='Your FirstName' />
         </div>
         <div className='w-[100%] h-[15%]  flex justify-around items-start flex-col'>
-          <label htmlFor="" className='text-[15px] text-white'>Last Name</label>
+          <label htmlFor="" className='text-[15px] text-white smallPhone:text-[12px]'>Last Name</label>
           <input type="text" className='w-[100%] h-[54%] bg-[#fdfdf7] outline-none rounded-md px-3' placeholder='Your LastName' />
         </div>
         <div className='w-[100%] h-[15%]  flex justify-around items-start flex-col'>
-          <label htmlFor="" className='text-[15px] text-white'>Email</label>
+          <label htmlFor="" className='text-[15px] text-white smallPhone:text-[12px]'>Email</label>
           <input type="text" className='w-[100%] h-[54%] bg-[#fdfdf7] outline-none rounded-md px-3' placeholder='Your Email' />
         </div>
         <div className='w-[100%] h-[15%]  flex justify-around items-start flex-col'>
-          <label htmlFor="" className='text-[15px] text-white'>Phone Number</label>
+          <label htmlFor="" className='text-[15px] text-white smallPhone:text-[12px]'>Phone Number</label>
           <input type="text" className='w-[100%] h-[54%] bg-[#fdfdf7] outline-none rounded-md px-3' placeholder='Enter Phone number' />
         </div>
         <div className='w-[100%] h-[15%] flex justify-around items-start flex-col smallPhone:h-[16%%]'>
-          <label htmlFor="" className='text-[15px] font-medium text-white'>Password</label>
+          <label htmlFor="" className='text-[15px] font-medium text-white smallPhone:text-[12px]'>Password</label>
           <div className='w-[100%] h-[54%] bg-[#FDFDF7] rounded-md flex  px-4 justify-center items-center'>
           <input type={`${Show ? "text" : "password"}`} className='w-[100%] h-[100%] rounded-lg outline-none  bg-[#FDFDF7] ' placeholder='Password' />
          
@@ -72,8 +74,8 @@ const SignUp = () => {
 
         </div>
         <div className='w-[100%] h-[20%] flex justify-around items-center flex-col'>
-          <button className='w-[100%] h-[40%] bg-[#4D91FF] rounded-md font-medium text-lg text-white'>Create Account</button>
-          <p className='text-white font-medium smallPhone:text-sm'>Already have an account? <span className=' cursor-pointer text-yellow-500 font-semibold'>Login</span> </p>
+          <button className='w-[100%] h-[40%] bg-[#4D91FF] rounded-md font-medium text-lg text-white smallPhone:h-[36%]'>Create Account</button>
+          <p className='text-white font-medium smallPhone:text-sm'>Already have an account? <span className=' cursor-pointer text-yellow-500 font-semibold' onClick={()=>Navigate('/login')}>Login</span> </p>
         </div>
       </form>
       </div>
