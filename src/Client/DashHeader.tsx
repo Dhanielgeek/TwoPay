@@ -45,7 +45,7 @@ const DashHeader: React.FC = () => {
   };
 
   return (
-    <div className="w-[100%] h-[15%] bg-white border-gray-100 border-b-2 justify-between flex phone:h-[10%]">
+    <div className="w-[100%] h-[12%] bg-white border-gray-100 border-b-2 justify-between flex phone:h-[10%]">
         <Mobile/>
       <div className="w-[30%] h-[100%] flex justify-center items-center phone:hidden">
         <h2 className="text-xl">
