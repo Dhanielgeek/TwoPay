@@ -6,10 +6,10 @@ import Menu from "./Menu"
 const Dashboard = () => {
   return (
     <div className="h-screen w-screen flex">
-      <div className="w-[10%] h-[100%] bg-red-500">
+      <div className="w-[15%] h-[100%] phone:hidden">
         <Menu/>
       </div>
-      <div className="w-screen h-screen bg-green-500">
+      <div className="w-screen h-screen">
         <DashHeader/>
         <Outlet/>
       </div>
