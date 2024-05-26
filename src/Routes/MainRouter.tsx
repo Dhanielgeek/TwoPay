@@ -10,6 +10,7 @@ import Deposit from "../Client/Deposit";
 import Withdraw from "../Client/Withdraw";
 import Transfer from "../Client/Transfer";
 import Maincontent from "../Client/Maincontent";
+import Account from "../Client/Account/Account";
 
 
 export const MainRouter = createBrowserRouter([
@@ -56,6 +57,10 @@ export const MainRouter = createBrowserRouter([
             {
                 path: "over",
                 element:<Maincontent/>
+            },
+            {
+                path: "acct",
+                element: <Account/>
             }
         ]
     }
