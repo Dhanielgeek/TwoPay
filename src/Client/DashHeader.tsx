@@ -48,8 +48,8 @@ const DashHeader: React.FC = () => {
     <div className="w-[100%] h-[12%] bg-white border-gray-100 border-b-2 justify-between flex phone:h-[10%]">
         <Mobile/>
       <div className="w-[30%] h-[100%] flex justify-center items-center phone:hidden">
-        <h2 className="text-xl">
-          Welcome <span className="font-semibold text-2xl">Daniel 👋</span>
+        <h2 className="text-lg">
+          Welcome <span className="font-semibold text-xl">Daniel 👋</span>
         </h2>
       </div>
       <div className="w-[37%] h-[100%] flex justify-center items-center phone:w-[36%] phone:justify-around">
@@ -59,7 +59,7 @@ const DashHeader: React.FC = () => {
           </div>
           <div className="w-[60%] h-[50%] flex justify-around items-center phone:w-[80%] ">
             <div
-              className="w-[40px] h-[40px] border rounded-full flex justify-center items-center cursor-pointer phone:w-[50px] phone:h-[50px]"
+              className="w-[40px] h-[40px] border rounded-full flex justify-center items-center cursor-pointer phone:w-[50px] phone:h-[50px] smallPhone:w-[30px] smallPhone:h-[30px]"
               onClick={handleUserIconClick}
             >
               {userImage ? (
