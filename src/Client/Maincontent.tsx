@@ -102,7 +102,7 @@ const HandleSaved = ()=>{
         </div>
         <div className="w-[89%] h-[40%] flex flex-col justify-around items-start rounded-md">
           <div className="w-[100%] h-[20%] smallPhone:h-[25%]">
-            <p className=" font-semibold">Recent Activity</p>
+            <p className=" font-semibold text-lg">Recent Activity</p>
           </div>
           <div className="w-[100%] h-[80%]  scroll  overflow-y-scroll scrollbar-track-gray-300 scrollbar-thin smallPhone:h-[90%]">
           <div className="w-[100%] h-[45%] flex justify-around items-center border mt-2 rounded-md">
