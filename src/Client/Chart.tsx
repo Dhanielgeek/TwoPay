@@ -1,53 +1,107 @@
-import React from 'react';
-import {
-  ComposedChart,
-  Bar,
-  Line,
-  Area,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-} from 'recharts';
+
+import { ResponsiveLine } from '@nivo/line';
 
 const data = [
-  { name: 'Jan-Mar', moneyIn: 4000, moneyOut: 2400, amt: 2400 },
-  { name: 'Apr-Jun', moneyIn: 3000, moneyOut: 1398, amt: 2210 },
-  { name: 'Jul-Sep', moneyIn: 2000, moneyOut: 9800, amt: 2290 },
-  { name: 'Oct-Dec', moneyIn: 2780, moneyOut: 3908, amt: 2000 },
+  {
+    id: 'moneyIn',
+    color: '#c1121f',
+    data: [
+      { x: 'Jan-Mar', y: 4000 },
+      { x: 'Apr-Jun', y: 3000 },
+      { x: 'Jul-Sep', y: 2000 },
+      { x: 'Oct-Dec', y: 2780 },
+    ],
+  },
+  {
+    id: 'moneyOut',
+    color: '#2E54E3',
+    data: [
+      { x: 'Jan-Mar', y: 2400 },
+      { x: 'Apr-Jun', y: 1398 },
+      { x: 'Jul-Sep', y: 9800 },
+      { x: 'Oct-Dec', y: 3908 },
+    ],
+  },
+  {
+    id: 'amt',
+    color: '#8884d8',
+    data: [
+      { x: 'Jan-Mar', y: 2400 },
+      { x: 'Apr-Jun', y: 2210 },
+      { x: 'Jul-Sep', y: 2290 },
+      { x: 'Oct-Dec', y: 2000 },
+    ],
+  },
 ];
 
-const Chart: React.FC = () => {
-  return (
-    <ResponsiveContainer width="100%" height={345}>
-      <ComposedChart data={data} margin={{ top: 25, right: 30, left: 10, bottom: 5 }}>
-        <CartesianGrid stroke="#f5f5f5" />
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Tooltip />
-        <Legend
-          layout="horizontal"
-          align="center"
-          verticalAlign="top"
-          wrapperStyle={{
-            top: 0,
-            fontSize: '14px',
-            fontWeight: 'bold',
-            backgroundColor: '#f5f5f5',
-            borderRadius: '5px',
-            padding: '7px',
-          }}
-        />
-        <Area type="monotone" dataKey="amt" fill="#8884d8" stroke="#8884d8" />
-        <Bar dataKey="moneyIn" barSize={20} fill="#c1121f" />
-        <Bar dataKey="moneyOut" barSize={20} fill="#2E54E3" />
-        <Line type="monotone" dataKey="moneyIn" stroke="#c1121f" />
-        <Line type="monotone" dataKey="moneyOut" stroke="#2E54E3" />
-      </ComposedChart>
-    </ResponsiveContainer>
-  );
-};
+const Chart = () => (
+  <div style={{ height: 345 }}>
+    <ResponsiveLine
+      data={data}
+      margin={{ top: 25, right: 30, bottom: 60, left: 40 }}
+      xScale={{ type: 'point' }}
+      yScale={{
+        type: 'linear',
+        min: 'auto',
+        max: 'auto',
+        stacked: false,
+        reverse: false,
+      }}
+      axisTop={null}
+      axisRight={null}
+      axisBottom={{
+        tickSize: 5,
+        tickPadding: 5,
+        tickRotation: 0,
+        legend: 'Period',
+        legendOffset: 36,
+        legendPosition: 'middle',
+      }}
+      axisLeft={{
+        tickSize: 5,
+        tickPadding: 5,
+        tickRotation: 0,
+        legend: 'Amount',
+        legendOffset: -40,
+        legendPosition: 'middle',
+      }}
+      enableGridX={false}
+      enableGridY={true}
+      lineWidth={2}
+      pointSize={10}
+      pointColor={{ theme: 'background' }}
+      pointBorderWidth={2}
+      pointBorderColor={{ from: 'serieColor' }}
+      pointLabelYOffset={-12}
+      useMesh={true}
+      legends={[
+        {
+          anchor: 'top',
+          direction: 'row',
+          justify: false,
+          translateX: 0,
+          translateY: -20,
+          itemsSpacing: 0,
+          itemDirection: 'left-to-right',
+          itemWidth: 80,
+          itemHeight: 20,
+          itemOpacity: 0.75,
+          symbolSize: 12,
+          symbolShape: 'circle',
+          symbolBorderColor: 'rgba(0, 0, 0, .5)',
+          effects: [
+            {
+              on: 'hover',
+              style: {
+                itemBackground: 'rgba(0, 0, 0, .03)',
+                itemOpacity: 1,
+              },
+            },
+          ],
+        },
+      ]}
+    />
+  </div>
+);
 
 export default Chart;
