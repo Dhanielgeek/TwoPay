@@ -8,6 +8,13 @@ body{
     font-family: "Playfair Display", serif;
 }
 
+
+.HeroImage{
+    background-image: url("../src/assets/hero-sub.png");
+    background-position: center;
+    background-size: cover;
+}
+
 @media screen and (max-width:500px) {
     .HeaderMenu{
         width: 33rem;
@@ -15,11 +22,12 @@ body{
         right: 1px;
     }
 }
-@media screen and (max-width:390px) {
+@media screen and (max-width:400px) {
     .HeaderMenu{
         width: 33rem;
-        top: 4.3rem;
+        top: 4.6rem;
         right: 1px;
+        padding-left: 55px;
     }
 }
 @media screen and (max-width:350px) {
