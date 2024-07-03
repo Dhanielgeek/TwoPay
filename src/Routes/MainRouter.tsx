@@ -1,5 +1,4 @@
 import { createBrowserRouter } from "react-router-dom";
-import Welcome from "../Components/Welcome";
 import Login from "../Auth/Login";
 import SignUp from "../Auth/SignUp";
 import Forget from "../Auth/Forget";
@@ -11,13 +10,12 @@ import Withdraw from "../Client/Withdraw";
 import Transfer from "../Client/Transfer";
 import Maincontent from "../Client/Maincontent";
 import Account from "../Client/Account/Account";
+import Layout from "../Components/Layout";
+import Home from "../Pages/Home";
 
 
 export const MainRouter = createBrowserRouter([
-    {
-        path : '/',
-        element: <Welcome/>
-    },
+ 
     {
         path : '/signup',
         element: <SignUp/>
@@ -29,6 +27,16 @@ export const MainRouter = createBrowserRouter([
     {
         path : '/forget',
         element: <Forget/>
+    },
+    {
+        path : "",
+        element : <Layout/>,
+        children : [
+            {
+                path : "",
+                element: <Home/>
+            }
+        ]
     },
     {
         path: '/main',

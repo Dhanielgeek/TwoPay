@@ -7,3 +7,25 @@
 body{
     font-family: "Playfair Display", serif;
 }
+
+@media screen and (max-width:500px) {
+    .HeaderMenu{
+        width: 33rem;
+        top: 5.8rem;
+        right: 1px;
+    }
+}
+@media screen and (max-width:390px) {
+    .HeaderMenu{
+        width: 33rem;
+        top: 4.3rem;
+        right: 1px;
+    }
+}
+@media screen and (max-width:350px) {
+    .HeaderMenu{
+        width: 33rem;
+        top: 3.1rem;
+        right: 1px;
+    }
+}
